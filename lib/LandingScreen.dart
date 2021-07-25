@@ -10,6 +10,11 @@ class LandingScreen extends StatelessWidget {
 
   LandingScreen({required this.nama, required this.password});
 
+  var styleMenu = TextStyle(
+    fontFamily: 'ReemKufi',
+    fontSize: 13.0,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +28,14 @@ class LandingScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 10.0),
                 child: Center(
-                  child: Text('Hi, $nama'),
+                  child: Text(
+                    'Hi, ($nama)',
+                    style: TextStyle(
+                      fontFamily: 'ReemKufi',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 28.68,
+                    ),
+                  ),
                 ),
               ),
               SizedBox(
@@ -31,14 +43,15 @@ class LandingScreen extends StatelessWidget {
               ),
               Padding(
                 padding:
-                    const EdgeInsets.only(left: 30.0, right: 30.0, top: 30.0),
+                const EdgeInsets.only(left: 15.0, right: 15.0, top: 30.0),
                 child: Container(
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: Colors.black,
-                      width: 3,
+                      width: 2,
                     ),
-                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(19.12),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
@@ -58,7 +71,10 @@ class LandingScreen extends StatelessWidget {
                                     width: 60,
                                     height: 60,
                                   ),
-                                  Text('Daftar Matkul')
+                                  Text(
+                                    'Daftar Matkul',
+                                    style: styleMenu,
+                                  ),
                                 ],
                               ),
                             ),
@@ -70,7 +86,10 @@ class LandingScreen extends StatelessWidget {
                                     width: 60,
                                     height: 60,
                                   ),
-                                  Text('Jadwal & Absen')
+                                  Text(
+                                    'Jadwal & Absen',
+                                    style: styleMenu,
+                                  )
                                 ],
                               ),
                             ),
@@ -82,7 +101,10 @@ class LandingScreen extends StatelessWidget {
                                     width: 60,
                                     height: 60,
                                   ),
-                                  Text('Daftar KP/TA')
+                                  Text(
+                                    'Daftar KP/TA',
+                                    style: styleMenu,
+                                  ),
                                 ],
                               ),
                             ),
@@ -102,7 +124,10 @@ class LandingScreen extends StatelessWidget {
                                     width: 60,
                                     height: 60,
                                   ),
-                                  Text('Pengaduan')
+                                  Text(
+                                    'Pengaduan',
+                                    style: styleMenu,
+                                  )
                                 ],
                               ),
                             ),
@@ -114,7 +139,10 @@ class LandingScreen extends StatelessWidget {
                                     width: 60,
                                     height: 60,
                                   ),
-                                  Text('Upload')
+                                  Text(
+                                    'Upload',
+                                    style: styleMenu,
+                                  )
                                 ],
                               ),
                             ),
@@ -126,7 +154,10 @@ class LandingScreen extends StatelessWidget {
                                     width: 60,
                                     height: 60,
                                   ),
-                                  Text('Score')
+                                  Text(
+                                    'Score',
+                                    style: styleMenu,
+                                  )
                                 ],
                               ),
                             ),
@@ -141,14 +172,21 @@ class LandingScreen extends StatelessWidget {
                 height: 20,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 50.0, right: 50.0),
-                child: Text('Pengumuman'),
+                padding: const EdgeInsets.only(left: 30.0),
+                child: Text(
+                  'Pengumuman',
+                  style: TextStyle(
+                    fontFamily: 'ReemKufi',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.86,
+                  ),
+                ),
               ),
               SizedBox(
                 height: 20,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 50.0, right: 50.0),
+                padding: const EdgeInsets.only(left: 15.0, right: 15.0),
                 child: ConstrainedBox(
                   constraints: BoxConstraints(maxHeight: 400, minHeight: 200.0),
                   child: ListView.builder(
@@ -159,22 +197,56 @@ class LandingScreen extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return DetailScreen(
-                              pengumuman: pengumuman,
-                            );
-                          }));
+                                return DetailScreen(
+                                  pengumuman: pengumuman,
+                                );
+                              }));
                         },
                         child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(19.8),
+                          ),
                           child: Padding(
-                            padding: const EdgeInsets.all(12.0),
+                            padding: const EdgeInsets.only(
+                              left: 20.0,
+                              top: 20.0,
+                              bottom: 40.0,
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-                                Text(pengumuman.header),
+                                Text(
+                                  pengumuman.header,
+                                  style: TextStyle(
+                                    fontFamily: 'ReemKufi',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 31.5,
+                                  ),
+                                ),
                                 SizedBox(
                                   height: 10,
                                 ),
-                                Text(pengumuman.singkat),
+                                Text(
+                                  pengumuman.singkat,
+                                  style: TextStyle(
+                                    fontFamily: 'ReemKufi',
+                                    fontSize: 13.5,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 15.0),
+                                  child: Align(
+                                    alignment: Alignment.bottomRight,
+                                    child: Text(
+                                      'Read more',
+                                      style: TextStyle(
+                                        fontFamily: 'ReemKufi',
+                                        fontSize: 14.85,
+                                        color: '0EB7ED'.toColor(),
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                           ),

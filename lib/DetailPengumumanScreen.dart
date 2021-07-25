@@ -31,7 +31,8 @@ class DetailScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 30.0, right: 30.0, top: 40.0),
+              padding:
+                  const EdgeInsets.only(left: 30.0, right: 30.0, top: 40.0),
               child: Card(
                 child: Padding(
                   padding: EdgeInsets.only(bottom: 40.0),
@@ -56,14 +57,20 @@ class DetailScreen extends StatelessWidget {
                               ),
                               Text(
                                 pengumuman.judulDetail,
-                                style: TextStyle(),
+                                style: TextStyle(
+                                  fontFamily: 'ReemKufi',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 25.0,
+                                ),
                               ),
                               SizedBox(
-                                height: 20,
+                                height: 15,
                               ),
                               Text(
                                 pengumuman.isi,
                                 style: TextStyle(
+                                  fontFamily: 'ReemKufi',
+                                  fontSize: 15.0,
                                 ),
                                 textAlign: TextAlign.justify,
                               ),
